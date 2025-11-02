@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Three-Point Tracker - Home";
+const pageDescription = "Discover data-driven insights into the evolution of three-point shooting in basketball, with precision analytics for fans, analysts, and teams.";
+
+const features = [
+  {
+    icon: "fas fa-chart-line",
+    title: "Interactive Dashboards",
+    text: "Visualize shot charts, heat maps, and predictive models"
+  },
+  {
+    icon: "fas fa-users",
+    title: "Player Spotlights",
+    text: "Dive deep into star performances and emerging talents"
+  },
+  {
+    icon: "fas fa-history",
+    title: "Historical Trends",
+    text: "Track the evolution from mid-range to arc dominance"
+  }
+];
+
+const insights = [
+  {
+    number: "2.5x",
+    label: "Increase in Three-Point Efficiency",
+    description: "Since 2000, average three-point percentage has improved significantly"
+  },
+  {
+    number: "42%",
+    label: "Basketball Game Usage",
+    description: "Three-point attempts now account for over 40% of total shots"
+  },
+  {
+    number: "3.5x",
+    label: "Points Per Shot",
+    description: "Modern three-pointers are worth 3 points versus 2 for mid-range"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#166534] to-[#0d4d26] py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Three-Point Tracker
+        </h1>
+        <p class="text-xl md:text-2xl text-green-100 mb-10 max-w-2xl mx-auto">
+          Data-Driven Insights into Basketball's Three-Point Revolution
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/analytics" class="bg-white text-[#166534] hover:bg-green-50 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Analytics
+          </a>
+          <a href="/teams" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-all duration-300">
+            View Teams
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {insights.map((stat, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 border border-gray-100">
+            <div class="text-5xl font-bold text-[#166534] mb-2">{stat.number}</div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">{stat.label}</h3>
+            <p class="text-gray-600">{stat.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Three-Point Analytics Matter</h2>
+        <div class="w-24 h-1 bg-[#ef4444] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 rounded-full bg-[#166534] flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+            <p class="text-gray-600">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-20 bg-gradient-to-br from-[#0d4d26] to-[#166534] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Discover the Evolution</h2>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-10 border border-white/20">
+          <p class="text-lg mb-6 leading-relaxed">
+            In the modern era of basketball, the three-point shot has transformed the game. 
+            At Three-Point Tracker, we harness precision analytics to uncover the strategies, 
+            trends, and performances shaping this revolution.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+            <div class="bg-white/5 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-3">Strategic Edge</h3>
+              <p class="text-green-100">
+                Analyze how teams leverage volume, efficiency, and shot selection to dominate.
+              </p>
+            </div>
+            <div class="bg-white/5 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-3">Player Spotlights</h3>
+              <p class="text-green-100">
+                Dive into stats for stars like Stephen Curry and emerging talents.
+              </p>
+            </div>
+            <div class="bg-white/5 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-3">Historical Trends</h3>
+              <p class="text-green-100">
+                Track the shift from mid-range mastery to beyond-the-arc dominance since the 1979 introduction of the three-point line.
+              </p>
+            </div>
+            <div class="bg-white/5 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-3">Predictive Models</h3>
+              <p class="text-green-100">
+                Forecast future trends based on current player and team performance metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="/insights" class="inline-block bg-[#ef4444] hover:bg-red-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            View Detailed Insights
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Unlock the Future of Basketball?</h2>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+        Join thousands of fans, analysts, and teams who rely on precise three-point analytics.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/signup" class="bg-[#166534] hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+          Get Started Free
+        </a>
+        <a href="/demo" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-all duration-300">
+          Schedule a Demo
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
